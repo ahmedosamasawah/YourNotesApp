@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *,
 ::after,
@@ -9,7 +9,7 @@
 
 html {
   font-size: 100%;
-  font-family: "Josefin Sans", Poppins;
+  font-family: 'Josefin Sans', Poppins;
 } /*16px*/
 
 body {
@@ -18,7 +18,10 @@ body {
 
 #root {
   transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
 }
+
 .dash-sec {
   display: flex;
   flex-direction: column;
@@ -124,13 +127,13 @@ body {
   right: 24px;
 }
 
-.to-position {
+.dash-sec .to-position {
+  /* left: 30%; */
   position: relative;
 }
 
 .user-bar {
   position: absolute;
-  right: -44rem;
   top: -4.6rem;
   width: 17rem;
   height: 15rem;
@@ -144,9 +147,15 @@ body {
   box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.1);
 }
 
+.user-sec .to-position {
+  left: 48%;
+  top: 3%;
+  position: relative;
+}
+
 .user-bar-2 {
   position: absolute;
-  right: -44rem;
+  right: 0rem;
   top: -6rem;
   width: 17rem;
   height: 15rem;
@@ -269,7 +278,7 @@ body {
 .nav-tools-box {
   display: flex;
   gap: 1rem;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   align-items: center;
 }
 
@@ -313,7 +322,7 @@ body {
 }
 
 .signup-img-box {
-  background-image: url("./assets/images/Logo-Cover.png");
+  background-image: url('./assets/images/Logo-Cover.png');
   height: 37.5rem;
   width: 30rem;
   display: flex;
@@ -593,11 +602,11 @@ body {
 }
 
 .arabic-mode .round {
-  left: 39rem;
+  left: 91%;
 }
 
 .arabic-mode .deleteTask {
-  right: 40rem;
+  left: 24px;
 }
 
 .arabic-mode .tasks-list-info div {
@@ -619,11 +628,143 @@ body {
   right: 27rem;
 }
 
-/* Responsive for just  */
+.arabic-mode .user-bar,
+.arabic-mode .user-bar-2,
+.user-bar,
+.user-bar-2 {
+  z-index: 1;
+  right: 0;
+}
+
+.to-position {
+  left: 48%;
+}
+
+/* ///////////////////////////////////// */
+/* ///////////////////////////////////// */
+/* ///////////////////////////////////// */
+/* ///////////////////////////////////// */
+/* ///////////////////////////////////// */
+/* ///////////////////////////////////// */
+/* ///////////////////////////////////// */
+/* ///////////////////////////////////// */
+/* ///////////////////////////////////// */
+/* ///////////////////////////////////// */
+
+/* Responsive Styles */
+@media only screen and (max-width: 1444px) {
+  .nav-bar {
+    width: 100vw;
+  }
+
+  .dash-sec .container,
+  .user-sec .container,
+  .check-input,
+  .tasks-list-info {
+    width: 55vw;
+  }
+
+  .signup-form-box,
+  .signup-img-box {
+    width: 45vw;
+  }
+
+  .signup-box {
+    justify-content: center;
+  }
+
+  .signup-form .form-input,
+  .form-btn {
+    width: 35vw;
+  }
+
+  .dash-bg-img-box {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .app-name {
+    font-size: 3rem;
+  }
+
+  .signup-lang-btn .btn {
+    display: none;
+  }
+
+  .signup-box {
+    height: 80vh;
+  }
+
+  .signup-box {
+    flex-direction: column;
+  }
+
+  .signup-img-box {
+    height: 30vh;
+    width: 70vw;
+  }
+
+  .signup-form-box {
+    width: 70vw;
+  }
+
+  .signup-form-box .form-input,
+  .signup-form-box .form-btn {
+    width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .dash-sec .container,
+  .user-sec .container,
+  .check-input,
+  .tasks-list-info {
+    width: 75vw;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .tasks-list-info button,
+  .tasks-list-info p {
+    font-size: 0.8rem;
+  }
+
+  .form-input {
+    width: 82vw;
+  }
+
+  .edit-info-btn,
+  .user-info-form,
+  .user-sec-header {
+    width: 88vw;
+  }
+
+  .arabic-mode .round {
+    left: 75%;
+  }
+
+  .tasks-list-info div {
+    gap: 0;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .arabic-mode .round {
+    left: 87%;
+  }
+}
+
+@media only screen and (max-width: 471px) {
+  .tasks-list-info button,
+  .tasks-list-info p {
+    font-size: 0.6rem;
+  }
+}
+
 @media only screen and (max-width: 375px) {
   html {
     font-size: 80%;
-    font-family: "Josefin Sans", Poppins;
   }
 
   .signup-box {
@@ -634,17 +775,17 @@ body {
   }
 
   .signup-img-box {
-    height: 19rem;
+    /* height: 19rem; */
   }
 
   .signup-form-box {
-    width: 22rem;
+    /* width: 22rem; */
   }
 
   .signup-form-box .form-input,
   .signup-form-box .form-btn,
   .signup-form-box .back-btn {
-    width: 19rem;
+    /* width: 19rem; */
   }
 
   .inner-signup-img-box {
@@ -659,10 +800,6 @@ body {
     bottom: 45rem;
     right: 38rem;
     z-index: 1;
-  }
-
-  .nav-bar {
-    width: 25rem;
   }
 
   .tasks-list-info,
@@ -705,10 +842,17 @@ body {
     top: 19px;
     left: 18px;
   }
-
+  .arabic-mode .container .round {
+    left: 18px;
+  }
   .tasks-list {
     margin-top: -5rem;
     margin-bottom: 1rem;
+  }
+
+  .user-sec .to-position,
+  .to-position {
+    left: 0;
   }
 
   .check-input {
@@ -748,11 +892,6 @@ body {
   .user-sec,
   .dash-sec {
     width: 24rem;
-  }
-
-  .signup-section {
-    height: 80vh;
-    margin-left: -5rem;
   }
 
   .container {

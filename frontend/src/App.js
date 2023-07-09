@@ -1,8 +1,7 @@
-import { useAppContext } from "./context/appContext";
-import { Signup, Error, Home, EditUserInfo } from "./pages";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Signin from "./pages/Signin";
-// import { useState } from "react";
+import { useAppContext } from './context/appContext';
+import { Signup, Error, Home, EditUserInfo } from './pages';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Signin from './pages/Signin';
 
 export default function App() {
   const { user } = useAppContext();
@@ -14,7 +13,7 @@ export default function App() {
           path="/signup"
           // element={<Signup />}
           element={
-            localStorage.getItem("user") === null ? (
+            localStorage.getItem('user') === null ? (
               <Signup />
             ) : (
               <Navigate to="/signin" />
@@ -25,7 +24,7 @@ export default function App() {
           path="/signin"
           // element={<Signin />}
           element={
-            localStorage.getItem("user") === null ? (
+            localStorage.getItem('user') === null ? (
               <Signin />
             ) : (
               <Navigate to="/home" />
