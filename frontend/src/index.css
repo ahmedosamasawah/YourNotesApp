@@ -710,7 +710,8 @@ body {
   }
 
   .signup-form-box .form-input,
-  .signup-form-box .form-btn {
+  .signup-form-box .form-btn,
+  .signup-form-box .back-btn {
     width: 50vw;
   }
 }
@@ -772,20 +773,6 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  }
-
-  .signup-img-box {
-    /* height: 19rem; */
-  }
-
-  .signup-form-box {
-    /* width: 22rem; */
-  }
-
-  .signup-form-box .form-input,
-  .signup-form-box .form-btn,
-  .signup-form-box .back-btn {
-    /* width: 19rem; */
   }
 
   .inner-signup-img-box {
