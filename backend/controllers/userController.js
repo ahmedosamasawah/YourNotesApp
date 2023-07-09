@@ -5,13 +5,13 @@
 // const bcrypt = require("bcrypt");
 // import {ObjectId} from 'mongoose'
 
-import User from "../Models/userModel.js";
-import validator from "validator";
-import JsonWebToken from "jsonwebtoken";
-import bcrypt from "bcrypt";
+import User from '../Models/userModel.js';
+import validator from 'validator';
+import JsonWebToken from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
 
-const createToken = (_id) => {
-  return JsonWebToken.sign({ _id }, process.env.SECRET, { expiresIn: "3d" });
+const createToken = _id => {
+  return JsonWebToken.sign({ _id }, process.env.SECRET, { expiresIn: '3d' });
 };
 
 // Signup user
@@ -33,7 +33,7 @@ const signupUser = async (request, response) => {
     const token = createToken(user._id);
 
     response.status(200).json({
-      message: "Signup successful, You can Signin now!",
+      message: 'Signup successful, You can Signin now!',
       email,
       token,
       confirmPass,
@@ -109,21 +109,21 @@ const updateUser = async function (request, response) {
     }
 
     if (!updatedUser) {
-      throw new Error("User not found");
+      throw new Error('User not found');
     }
 
-    if (exist) throw Error("This email already exists!");
+    if (exist) throw Error('This email already exists!');
     if (!validator.isEmail(updatedUser.email))
-      throw Error("Email is not valid!");
+      throw Error('Email is not valid!');
     if (!validator.isStrongPassword(updatedUser.password))
-      throw Error("Password not strong enough!");
+      throw Error("Password not strong enough!, example: 'Ahmed@742002'");
 
     const token = createToken(updatedUser._id);
     response.status(200).json({ user: updatedUser, token });
   } catch (error) {
     if (error.code === 11000) {
       response.status(400).json({
-        error: "This email is already exist!",
+        error: 'This email is already exist!',
       });
     } else {
       response.status(400).json({ error: error.message });
